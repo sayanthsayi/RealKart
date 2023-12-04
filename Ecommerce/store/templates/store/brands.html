@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Brands{% endblock title %}
+{% block content %}
+<section>
+    <div class="">   
+      <div class="w-[100%] h-10 bg-blue-900">
+          {% if subCategory %}
+              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class=" ms-8 text-white bg-blue-900 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Brands <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" data-dropdown-trigger="hover"/>
+              </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div id="dropdown" class=" ms-5 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                  {% for items in subCategory %}
+                    <li>
+                        <a href="#" class=" px-4 py-2 hover:bg-black-100 text-lg hover:text-black">{{items.name}}</a>
+                    </li>     
+                  {% endfor %}
+                  </ul>
+              </div> 
+                      
+          {% endif %}
+      </div>
+            
+
+            <!-- products -->
+      <div class="flex flex-wrap pt-2 gap-3 ">
+        {% if product %}
+          {% for items in product %}
+            <a href="#">
+              <div class="flex mb-3 relative w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+                <a class="relative mx-3 mt-3 flex h-72 overflow-hidden rounded-xl" href="#">
+                  <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative overflow-hidden rounded-lg md:h-96">
+                        <!-- Item 1 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{items.image1.url}}  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{items.image2.url}}  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{items.image3.url}}  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{items.image4.url}}  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                    </div>
+                    <!-- Slider indicators -->
+                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                    </div>
+                    <!-- Slider controls -->
+                    
+                </div>                                
+                    <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
+                </a>
+                <div class="mt-4 px-5 pb-5">
+                  <a href="#">
+                    <h5 class="text-xl tracking-tight text-slate-900">{{items.name}}</h5>
+                  </a>
+                  <div class="mt-2 mb-5 flex items-center justify-between">
+                    <p>
+                      <span class="text-3xl font-bold text-slate-900">Rs:{{items.selling_price}}</span>
+                      <span class="text-sm line-through text-red-700">MRP:{{items.Original_price}}</span>
+                    </p>          
+                  </div>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+          {% else %}
+          <div class="mx-auto">
+              <div>
+                <img src={% static "images/sorrygif.gif" %} class="" alt="">
+              </div>
+          </div>
+        {% endif %}  
+    </div>            
+</section>
+
+{% endblock content %}
+

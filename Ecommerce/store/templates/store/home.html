@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section>
+    <div>
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                 <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{% static "images/banner1.jpg" %}"  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{% static "images/banner2.jpg" %}"  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{% static "images/banner3.jpg" %}"  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+            </div>
+            <!-- Slider controls -->
+            {% comment %} <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button> {% endcomment %}
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+        
+        </div>
+        <div class="w-[92%] mx-auto">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. A autem aliquam, qui fuga quae reiciendis dolore perspiciatis quam, nulla, temporibus architecto labore eligendi? Quisquam repellat dignissimos exercitationem voluptatem ipsa delectus, quod in tempora, reiciendis rem dolorum nulla? Accusantium quis architecto at eaque dolore libero quod sit blanditiis cum ipsum ullam commodi voluptatum facere consequuntur sapiente totam est impedit, sequi nulla nesciunt possimus voluptas illum quibusdam. Tenetur odio nulla eius beatae, suscipit laborum officia incidunt accusantium quasi iure id soluta, ducimus voluptate at aperiam repellat recusandae voluptates et ratione mollitia ab officiis hic reiciendis consequatur? Magni accusantium temporibus tempore! Ab maiores deleniti, qui corporis molestias aliquid quia possimus nobis recusandae optio, laborum eius modi. Exercitationem repudiandae in tenetur earum asperiores odio sapiente a rem, quae dolore repellat animi deleniti placeat dolorum ipsa aliquam nostrum voluptate expedita nam, aliquid adipisci dolor officiis libero eos! Voluptatibus laudantium libero commodi deleniti fugiat itaque perferendis aliquid ex? Error, dignissimos consequatur accusantium rerum aliquam at unde odit delectus enim eum provident iure officia minima voluptate consectetur dolor eaque beatae totam eius id. Beatae nemo eveniet error quas quidem inventore sed! Molestias cupiditate doloribus magni eos perferendis distinctio vero quae ratione. Laboriosam voluptate eos unde minus labore suscipit quaerat voluptas excepturi magni voluptatum. Veritatis sapiente odio recusandae et vel? Aperiam, nisi debitis optio natus quam maiores, nobis eum odit repudiandae voluptates id non suscipit ea quisquam consectetur enim eaque fuga libero in. Repellendus autem, explicabo sequi exercitationem quaerat quia. Ducimus tenetur aut eveniet possimus numquam voluptas ea illum repellendus voluptates ipsa asperiores officia nulla consequatur temporibus laborum quod perferendis aperiam nemo quidem eos, assumenda velit fugiat! Ad consectetur nemo sunt harum cupiditate beatae modi minima, consequatur assumenda nostrum, optio tenetur dicta quas. Temporibus id cum doloremque cupiditate unde maiores necessitatibus eum quos et facere explicabo, nemo molestiae eos eius facilis tempora sequi vel ratione quis vitae commodi odio. Quia beatae voluptas exercitationem in, ratione esse fuga obcaecati, similique, provident adipisci expedita ducimus. Quasi itaque eaque error ad nobis, iure repellat alias eveniet nesciunt excepturi enim. Vitae minima natus esse eligendi quos atque! Dolorum consectetur laudantium dolore, facere ratione et voluptas nesciunt quos necessitatibus odio quaerat aut repellendus nisi, cupiditate minima in expedita autem. Ad dolores dignissimos sequi veritatis vitae ratione eos, consequuntur accusamus temporibus harum doloribus eveniet nobis excepturi possimus ipsam iste veniam explicabo nihil rem earum sapiente repellat cumque? Debitis dolorem iusto rerum odio a voluptatum blanditiis, in voluptates ipsa officiis reprehenderit sint quas autem ipsum soluta qui assumenda eum adipisci dolorum quos. Distinctio commodi accusantium ea corporis quae. Quas assumenda molestias modi adipisci cupiditate et asperiores est, maiores quibusdam veritatis sit voluptate beatae, maxime laudantium. Odit voluptatibus optio sequi nisi non pariatur, corporis ipsum temporibus earum eos rerum laborum facilis, repellat fugit consequuntur sint architecto aspernatur iste aperiam incidunt aut minus est! Odio odit non consectetur veniam labore, ex saepe tempore aliquam, rem optio qui expedita adipisci eaque sint et sapiente. Fugiat velit, laudantium laboriosam sit debitis repudiandae ipsa tempora, ad, nisi quos molestiae facilis.</h1>
+        </div>
+</section>
+{% endblock content %}
