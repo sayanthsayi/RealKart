@@ -14,20 +14,16 @@ def Brands(request,slug):
     category1=Category.objects.filter(slug=slug)
     subCategory=SubCategory.objects.filter(category__slug=slug)
     product=Product.objects.filter(category__slug=slug)
-    productSeries=ProductSeries.objects.filter(subcategory__slug=slug)
 
-    all=[]
-    for p in product:
-        value =100-(p.Original_price/p.selling_price)*100
-        off_price = value
-        all.append(value)
 
-    context={'category':category,'product':product,"subCategory":subCategory,"productseries":productSeries,"all":all,}  
+    context={'category':category,'product':product,"subCategory":subCategory,}  
     return render(request,"store/brands.html",context)
 
 def ProductView(request,slug):
     category=Category.objects.all()
+    category1=Category.objects.filter(slug=slug)
     product = Product.objects.filter(slug=slug)
+    productSeries=ProductSeries.objects.filter(product__slug=slug)
 
-    context={'category':category,'product':product}  
+    context={'category':category,'product':product,'productSeries':productSeries}  
     return render(request,"store/productview.html",context)

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
+    'Account',
     'tailwind',
     'ecom',
     'django_browser_reload',
